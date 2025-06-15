@@ -262,7 +262,7 @@ def img_to_base64(img_path):
 
 st.markdown("---")
 st.title("SNS에서 사람들의 반응은?")
-st.markdown("<h5>한국, 미국에서는 이 정책에 대해 사람들이 어떻게 반응하고 있을까요? 뉴스, Instagram, Youtube, X 댓글에서 많이 언급된 단어와 사람들이 보인 감정을 확인해보세요!</h5>", unsafe_allow_html=True)
+st.markdown("<h5>한국, 미국에서는 이 정책에 대해 사람들이 어떻게 반응하고 있을까요? <br>뉴스, Instagram, Youtube, X 댓글에서 많이 언급된 단어와 사람들이 보인 감정을 확인해보세요!</h5>", unsafe_allow_html=True)
 
 # 명사 or 형용사 선택
 word_type = st.selectbox("어떤 반응을 보고 싶은가요?", ("💬 많이 언급된 단어는?", "🔥 사람들의 감정은?"))
