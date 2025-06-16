@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Trump Timeline", layout="wide")
-st.image("heading.png")
+st.image("assets/heading.png")
 
 st.markdown("""
     <style>
@@ -270,9 +270,9 @@ word_type = st.selectbox("어떤 반응을 보고 싶은가요?", ("💬 많이 
 # 선택에 따라 파일명 지정
 def get_image_filenames(word_type):
     if word_type == "💬 많이 언급된 단어는?":
-        return "korea_noun.png", "usa_noun.png"
+        return "assets/korea_noun.png", "assets/usa_noun.png"
     else:
-        return "korea_adj.png", "usa_adj.png"
+        return "assets/korea_adj.png", "assets/usa_adj.png"
 
 img1_path, img2_path = get_image_filenames(word_type)
 
@@ -306,10 +306,6 @@ from plotly.subplots import make_subplots
 import numpy as np
 import plotly.express as px
 
-# 페이지 설정
-
-
-
 # 제목
 st.title("미국 유학생 현황")
 st.markdown("---")
@@ -318,7 +314,7 @@ st.markdown("---")
 def load_country_data():
     """국가별 유학생 데이터를 로드하고 정리"""
     try:
-        df = pd.read_excel('st_nation.xlsx', 
+        df = pd.read_excel('data/st_nation.xlsx', 
                           sheet_name='Intl Students Place of Origin',
                           header=2)
         
@@ -572,12 +568,12 @@ if country_df is not None and year_columns is not None:
         st.warning(f"❌ {st.session_state.selected_year}년도 데이터를 찾을 수 없습니다.")
 
 else:
-    st.error("❌ 데이터를 로드할 수 없습니다. 'st_nation.xlsx' 파일이 같은 폴더에 있는지 확인하세요.")
+    st.error("❌ 데이터를 로드할 수 없습니다. 'st_nation.xlsx' 파일이 data 폴더에 있는지 확인하세요.")
 
 @st.cache_data
 def load_data():
     # Excel 파일 읽기
-    df = pd.read_excel('us_intstud.xlsx')
+    df = pd.read_excel('data/us_intstud.xlsx')
     
     # Total 행 분리
     total_row = df[df['State'] == 'Total'].iloc[0] if len(df[df['State'] == 'Total']) > 0 else None
@@ -1006,7 +1002,7 @@ st.markdown('<h3>미국이 놓친 인재 : 송춘주 교수</h3>', unsafe_allow_
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image("ucla.gif")
+    st.image("assets/ucla.gif")
     st.markdown("<h2 style='text-align: center;'>UCLA</h2>", unsafe_allow_html=True)
     st.markdown("""
         <div style="background-color: #E5DDDA; padding: 10px; border-radius: 5px; text-align: center;">
@@ -1014,7 +1010,7 @@ with col1:
         </div>
     """, unsafe_allow_html=True)
 with col2:
-    st.image("china.gif")
+    st.image("assets/china.gif")
     st.markdown("<h2 style='text-align: center;'>China</h2>", unsafe_allow_html=True)
     st.markdown("""
         <div style="background-color: #E5DDDA; padding: 10px; border-radius: 5px; text-align: center;">
@@ -1022,7 +1018,7 @@ with col2:
         </div>
     """, unsafe_allow_html=True)
 with col3:
-    st.image("bigai.gif")
+    st.image("assets/bigai.gif")
     st.markdown("<h2 style='text-align: center;'>BIGAI</h2>", unsafe_allow_html=True)
     st.markdown("""
         <div style="background-color: #E5DDDA; padding: 10px; border-radius: 5px; text-align: center;">
