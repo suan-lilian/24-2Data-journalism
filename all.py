@@ -54,6 +54,8 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
+st.markdown('---')
+
 st.title("Trump vs International Students Timeline")
 
 html_code = """
@@ -148,6 +150,14 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.write(""" 지난 트럼프 행정부때로 거슬러 올라가 Proclamation 10043에서부터 유학생 대상 정책이 시작되었습니다. 이는 중국 대학원생 및 연구자의 비자 발급을 제재하는 내용을 담고 있었으며, 역 1,000명의 중국 유학생의 비자가 취소되었습니다.
+         2025년 1월 트럼프 취임 이후, 트럼프의 대학교 DEI 프로그램과 빈유대주의 대응 강화 지시를 시작으로 강한 유학생 대상 정책이 시작되었습니다. 미국 법무부는 하버드, 콜롬비아, 조지 워싱턴 대학 등 미국 유명 대학을 대상으로 반유대주의 대응에 대한 조사를 착수하였고, 콜럼비아 대학교에게 연방 지원금을 4억 달러 삭감하는 등 강경한 조치를 이어나갔습니다.
+         그 결과 콜럼비아 대학은 트럼프의 요구를 수용하였습니다. 트럼프는 하버드로 눈을 돌렸습니다. 하버드가 미국 교육부(ED), 보건복지부(HHS) 등과 맺은 대규모 계약을 검토하면서 '학생과 교직원 권한 축소를 위한 거버넌스 개편', '다양성 프로그램 폐지' 등을 요구하였고 하버드 측은 트럼프의 요구를 거부하였습니다.
+         트럼프는 하버드 거부를 비판하며 과세 지위 박탈 가능성을 언급했으며 국토안보부(DHS)는 하버드 측에 유학생의 폭력적 활동에 관한 자료를 요구했으며, 이에 응하지 않을 시 학생 및 교환방문자 프로그램(SEVP)인증을 취소할 수 있다고 경고했습니다.
+         하버드는 트럼프 행정부를 상대로 소송을 제기하였고, 하버드가 유학생 정보를 제공했음에도 트럼프 행정부는 하버드에 대한 신규 연방 보조금을 중단하였습니다. 또한 하버드의 유학생 및 교환 방문자 프로그램(SEVP) 인증 취소 통보했고, 연방 기관들과 하버드 간의 약 1억달러 계약 혜지를 요청하는 등 하버드에 압박을 가했습니다.
+        법원은 정부의 비자 관련 조치에 가처분 명령을 내렸지만, 트럼프는 하버드 대학 유학생을 대상으로 6개월간 입국 중단을 명령했으며, 일부 유학생의 비자 취소 여부 검토 또한 지시하였습니다. 2025년 6월 5일, 미국 법원은 하버드 대학교에 대한 입국 금지 조치에 대한 임시 중단을 명령했지만 트럼프의 유학생 대상 비자 제한 정책과 하버드와의 갈등은 계속되고 있습니다.""")
+
+st.markdown('---')
 
 # 타이틀 및 설명 표시 (h1으로)
 st.markdown("<h1>유학생, 교수, 대학교의 반응은?</h1>", unsafe_allow_html=True)
@@ -252,6 +262,7 @@ if st.session_state.selected is not None:
         unsafe_allow_html=True
     )
 
+st.write("트럼프 정부의 유학생 비자 정책 강화로 인해 유학생들은 학업 지속 여부, 졸업 가능성, 신분 유지 문제 등으로 깊은 불안을 호소하고 있습니다. 교수진과 학교 측도 이 상황을 예의주시하며 법적 대응과 학생 보호 방안을 모색 중이지만, 확실한 해결책은 없는 상황인데요. 안전해야 할 학문의 장이 정치적 변수로 위협받고 있으며, 유학생들은 추방·입학 취소 등의 불안 속에서 심리적·경제적 부담까지 떠안고 있습니다. ")
 import streamlit as st
 import base64
 
@@ -262,7 +273,7 @@ def img_to_base64(img_path):
 
 st.markdown("---")
 st.title("SNS에서 사람들의 반응은?")
-st.markdown("<h5>한국, 미국에서는 이 정책에 대해 사람들이 어떻게 반응하고 있을까요? <br>뉴스, Instagram, Youtube, X 댓글에서 많이 언급된 단어와 사람들이 보인 감정을 확인해보세요!</h5>", unsafe_allow_html=True)
+st.markdown("<h5>한국, 미국에서는 이 정책에 대해 사람들이 어떻게 반응하고 있을까요? <br>뉴스, Instagram, Youtube 댓글에서 많이 언급된 단어와 사람들이 보인 감정을 확인해보세요!</h5>", unsafe_allow_html=True)
 
 # 명사 or 형용사 선택
 word_type = st.selectbox("어떤 반응을 보고 싶은가요?", ("💬 많이 언급된 단어는?", "🔥 사람들의 감정은?"))
@@ -272,7 +283,7 @@ def get_image_filenames(word_type):
     if word_type == "💬 많이 언급된 단어는?":
         return "assets/korea_noun.png", "assets/usa_noun.png"
     else:
-        return "assets/korea_adj.png", "assets/usa_adj.png"
+        return "assets/한국_wc.png", "assets/usa_adj.png"
 
 img1_path, img2_path = get_image_filenames(word_type)
 
@@ -293,8 +304,11 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+st.write("")
 
-
+st.write("""한국 측 워드클라우드에서는 ‘미국’, ‘트럼프’, ‘하버드’, ‘중국’, ‘유학생’ 등의 단어가 두드러지게 나타났습니다. 흥미로운 점은 유학생 비자 정책임에도 불구하고 ‘중국’이라는 특정 국가명이 주요 키워드로 등장했다는 사실입니다. 이는 많은 사람들이 이번 조치를 단순한 비자 정책이 아닌 미·중 갈등의 연장선으로 해석하고 있다는 점을 보여줍니다. 실제로 트럼프 행정부가 중국 출신 유학생을 겨냥한 발언이나 정책을 내놓은 바 있기 때문에 이러한 인식이 반영된 것으로 보입니다.
+         반면 미국 측 워드클라우드에서는 ‘student’, ‘harvard’라는 단어가 가장 많이 등장했습니다. 이를 통해 미국 내에서는 이번 사안을 ‘유학생 개인’과 ‘하버드 등 주요 대학’의 문제로 인식하고 있으며, 트럼프 행정부와 하버드 대학 간 대립 구도가 부각되고 있음을 알 수 있습니다.
+         형용사 분석 결과에서도 두 나라의 시각 차이가 드러납니다. 한국에서는 ‘미친’, ‘어떻게’와 같은 다소 감정적이고 우려 섞인 표현이 많아 이번 정책이 불러온 충격과 당혹감을 보여주었습니다. 반면 미국에서는 ‘federal’, ‘free’, ‘anti’ 등의 단어가 등장해 정책의 법적·제도적 측면이나 ‘자유’, ‘반대’라는 가치 판단과 관련된 논의가 활발하게 이루어지고 있는 것으로 나타났습니다.""")
 
 
 ##### 현재 유학생 수치#####
@@ -306,9 +320,10 @@ from plotly.subplots import make_subplots
 import numpy as np
 import plotly.express as px
 
+st.markdown("---")
+
 # 제목
 st.title("미국 유학생 현황")
-st.markdown("---")
 
 @st.cache_data
 def load_country_data():
@@ -339,15 +354,49 @@ def load_country_data():
         # 국가명 컬럼명 설정
         country_df.columns = ['Code'] + ['Country'] + [col for col in columns[2:]]
         
-        # 연도별 총합 계산
+        # TOTAL 행에서 연도별 총합 가져오기
         year_totals = {}
-        for year in year_columns:
-            total = 0
-            for _, row in country_df.iterrows():
-                val = row[year]
-                if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
-                    total += val
-            year_totals[year] = total
+        
+        # TOTAL 행 찾기
+        total_row = None
+        for _, row in df.iterrows():
+            country_name = str(row.iloc[1]).strip().upper()  # 두 번째 컬럼(국가명)
+            if 'TOTAL' in country_name:
+                total_row = row
+                break
+        
+        if total_row is not None:
+            # TOTAL 행에서 각 연도별 값 추출
+            for year in year_columns:
+                try:
+                    total_val = total_row[year]
+                    if pd.notna(total_val) and str(total_val) != '-' and isinstance(total_val, (int, float)):
+                        year_totals[year] = total_val
+                    else:
+                        # TOTAL 행에 값이 없으면 기존 방식으로 계산
+                        total = 0
+                        for _, country_row in country_df.iterrows():
+                            val = country_row[year]
+                            if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
+                                total += val
+                        year_totals[year] = total
+                except:
+                    # 오류 발생시 기존 방식으로 계산
+                    total = 0
+                    for _, country_row in country_df.iterrows():
+                        val = country_row[year]
+                        if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
+                            total += val
+                    year_totals[year] = total
+        else:
+            # TOTAL 행을 찾지 못한 경우 기존 방식으로 계산
+            for year in year_columns:
+                total = 0
+                for _, row in country_df.iterrows():
+                    val = row[year]
+                    if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
+                        total += val
+                year_totals[year] = total
         
         return country_df, year_columns, year_totals
         
@@ -429,7 +478,7 @@ if country_df is not None and year_columns is not None:
     totals_df['Growth_Rate'] = totals_df['Total_Students'].pct_change() * 100
     
     # 메인 그래프 - 전체 유학생 수 변화
-    st.subheader("📈 연도별 전체 미국 유학생 수 변화")
+    st.subheader("연도별 전체 미국 유학생 수 변화")
     
     # 현재 선택된 연도 표시
     current_year_int = int(st.session_state.selected_year.split('/')[0])
@@ -504,7 +553,7 @@ if country_df is not None and year_columns is not None:
             st.rerun()
     
     # 연도별 국가 비율 분석
-    st.subheader("🎯 연도별 국가 비율 분석")
+    st.subheader("연도별 국가 비율 분석")
     
     # 선택된 연도의 국가별 데이터 가져오기 (모든 국가)
     top_countries = get_top_countries_for_year(country_df, year_columns, st.session_state.selected_year, top_n=100)
@@ -625,13 +674,16 @@ def load_data():
     
     return df, total_row
 
+st.write('미국 내 유학생 수는 전반적으로 꾸준한 증가세를 보여왔으며, 2020년 코로나19 팬데믹의 여파로 일시적으로 감소한 것을 제외하면 지속적인 성장 흐름을 유지하고 있습니다.' \
+'연도별 변화를 살펴보면 이러한 증가세가 더욱 뚜렷하게 드러나며, 국가별로는 중국, 인도, 한국 출신 유학생의 비중이 특히 높게 나타나 미국 내 유학생 커뮤니티의 규모와 다양성을 잘 보여줍니다. 이처럼 많은 유학생들이 미국에 체류하고 있는 상황에서, 이들이 미국 사회에 어떤 영향을 미치고 있는지를 살펴보는 것은 중요한 질문입니다. 미국의 비영리 교육 단체 NAFSA(National Association of Foreign Student Advisers)의 자료에 따르면, 유학생들은 미국 경제와 학문 분야에 상당한 기여를 하고 있습니다.')
+
 # 데이터 로드
 df, total_row = load_data()
 
 # 제목
-st.subheader("🎓 미국 주별 유학생의 영향력")
-st.markdown("---")
-
+st.subheader("미국 주별 유학생의 영향력")
+st.markdown("<h5>유학생과 이민자는 창업 및 혁신을 통해 총 378,175개의 일자리를 창출하며 다양한 산업 분야에 기여하고 있습니다.<h5>", unsafe_allow_html=True)
+st.markdown('---')
 # 전체 통계 표시 (지도 위에)
 if total_row is not None:
     col1, col2, col3 = st.columns(3)
@@ -652,15 +704,11 @@ if total_row is not None:
     
     with col3:
         st.metric(
-            label="🏢 총 일자리 창출", 
+            label="🏢 총 일자리 창출 및 기여도", 
             value=f"{total_row['total_jobs']:,}개"
         )
-    
-    st.markdown("---")
 
-# 지도 생성
-st.subheader("📍 미국 주별 유학생의 영향력")
-
+st.markdown('---')
 # 지도 시각화
 fig_map = go.Figure(data=go.Choropleth(
     locations=df['state_code'],
@@ -700,18 +748,17 @@ st.plotly_chart(fig_map, use_container_width=True, config={
 })
 
 # 테이블 섹션
-st.markdown("---")
-
+st.write('')
 # 버튼 생성
 col1, col2, col3 = st.columns(3)
 
 with col1:
     btn_students = st.button("학생 수", key="students", use_container_width=True)
 with col2:
-    btn_contribution = st.button("경제적 기여도", key="contribution", use_container_width=True)
+    btn_contribution = st.button("경제적 기여", key="contribution", use_container_width=True)
 with col3:
-    btn_jobs = st.button("일자리 기여", key="jobs", use_container_width=True)
-
+    btn_jobs = st.button("일자리 창출 및 기여", key="jobs", use_container_width=True)
+st.write('')
 # 기본적으로 학생 수로 정렬된 테이블 표시
 if 'selected_metric' not in st.session_state:
     st.session_state.selected_metric = 'students'
@@ -738,9 +785,9 @@ elif st.session_state.selected_metric == 'contribution':
     
 else:  # jobs
     top_5 = df.nlargest(5, 'total_jobs')[['State', 'total_jobs']].reset_index(drop=True)
-    top_5.columns = ['주', '일자리 기여']
+    top_5.columns = ['주', '일자리 창출 및 기여']
     #top_5['일자리 창출'] = top_5['일자리 기여'].apply(lambda x: f"{x:,}개")
-    st.markdown("<h3 style='text-align: center;'>일자리 창출 상위 5개 주</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>일자리 창출 및 기여 상위 5개 주</h3>", unsafe_allow_html=True)
 
 # 테이블 스타일링
 st.markdown("""
@@ -769,6 +816,12 @@ st.markdown("""
 html_table = top_5.to_html(classes='centered-table', escape=False, table_id='ranking-table')
 st.markdown(html_table, unsafe_allow_html=True)
 
+st.write(' ')
+st.write('최근 통계에 따르면, 미국 내 유학생 수는 약 1,126,690명에 이르며, 이들이 미국 경제에 미치는 직접적인 기여도는 438억 달러(약 43.8 billion USD)에 달합니다. 또한,유학생과 이민자는 총 378,175개의 일자리를 창출하거나 이에 기여하며, 다양한 산업 분야에서 경제적·일자리 기여를 하고 있습니다. ' \
+'이러한 영향력은 주(State) 단위로도 확인할 수 있습니다. 특히 캘리포니아, 뉴욕, 매사추세츠 등 대학이 밀집된 주에서는 유학생 수는 물론, 경제적 기여도와 일자리 기여 모두 높은 수준을 보였습니다.')
+
+
+st.markdown('---')
 st.markdown("<h1>미국 여러 분야에서 유학생(이민자)의 활약</h1>", unsafe_allow_html=True)
 
 col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 3, 1, 3, 1,3,1])
@@ -810,7 +863,8 @@ countries = [
         "balloon": "꼭 우리한테 와!",
         "details": [
             "홍콩 주요 대학들, 중국 본토 학생 대상 장학금 확대 및 학비 지원 계획 발표.",
-            "일부 학교는 해외 유학생 전형 요건 완화 검토 중."
+            "일부 학교는 해외 유학생 전형 요건 완화 검토 중.",
+            "홍콩과학기술대학은 편입하고 싶어하는 모든 하버드대 재학생들을 받아들이겠다고 밝힘, 간소화한 편입 절차 등을 내세운 모집공고 발표. 이후 하버드생에게 편입 고려를 요청하는 편지를 보냄."
         ]
     },
     {
@@ -819,7 +873,7 @@ countries = [
         "balloon": "졸업 후 취업비자도 문제없어!",
         "details": [
             "영국 정부는 유학생 대상 2년 졸업 후 취업비자 제도 유지 방침 재확인.",
-            "영국 대학들은 중국 유학생 유치를 위한 온라인 설명회 개최 중."
+            "영국 대학들은 유학생 유치를 위한 온라인 설명회 개최 중."
         ]
     },
     {
@@ -836,8 +890,9 @@ countries = [
         "name": "일본",
         "balloon": "기숙사 지원 가능해!",
         "details": [
-            "일본 대학들, 중국 유학생 수용 확대 방안 검토.",
-            "일부 대학은 신규 입학생에게 기숙사 우선 제공 계획 발표."
+            "일본 대학들, 유학생 수용 확대 방안 검토.",
+            "일부 대학은 신규 입학생에게 기숙사 우선 제공 계획 발표.",
+            "도쿄대는 하버드생을 위한 별도 강의 개설을 통한 수용 방안 검토 중"
         ]
     }
 ]
@@ -872,7 +927,8 @@ st.markdown("""
             padding: 15px;
             background-color: #f9f9f9;
             position: relative;
-            height: 300px;
+            min-height: 300px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -927,7 +983,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown('---')
+
 st.markdown("<h1>비자 정책에 대한 각국의 반응</h1>", unsafe_allow_html=True)
+st.write('')
+st.markdown("<h5>그렇다면 미국의 이번 비자 정책으로 가장 분주해진 곳은 어디일까요?<br>바로 미국 밖 다른 나라들입니다. 여러 국가들이 미국에서 ‘방출’되는 인재들을 유치하기 위해 분주히 움직이고 있습니다. 그렇다면 이들은 어떤 방식으로 접근하고 있을까요?</h5>", unsafe_allow_html=True)
 
 # 첫 번째 줄: 3개 카드
 cols1 = st.columns(3)
@@ -979,9 +1039,12 @@ with cols2[2]:
         """,
         unsafe_allow_html=True
     )
+st.write('')
+st.write('미국의 이번 유학생 비자 정책은 안보를 강화하려는 목적에서 추진되고 있지만, 그 부작용에 대해서는 충분히 인지하지 못하고 있는 것으로 보입니다. 단기적으로는 비자 제한을 통해 일부 우려를 해소할 수 있으나, 장기적으로는 미국 경제와 학문의 근간이 되는 우수 인재들이 다른 나라로 빠져나가면서 경쟁력이 약화될 위험이 큽니다. 실제로 홍콩, 영국, 한국, 일본 등 여러 국가들은 미국에서 방출되는 인재들을 적극적으로 유치하기 위해 맞춤형 지원 프로그램, 장학금 확대, 기숙사 지원, 취업비자 보장 등 각기 다른 방식으로 대응하고 있습니다. 결국 이번 정책은 미국 스스로 자신의 미래 성장 동력을 약화시키는 역효과를 낳을 가능성이 크다고 할 수 있습니다.')
 
+st.markdown('---')
 st.markdown('<h1>미국 비자 정책의 역설</h1>', unsafe_allow_html=True)
-st.write("현재 트럼프의 유학생 대상 비자 정책과 유사한 정책이 과거에도 있었습니다. 2020년, 트럼프 정부는 Proclamation 10043을 통해 중국 인민해방군과 연계된 연구자 및 대학원생 약 1000명의 비자를 취소했습니다. 이는 미-중 간 기술 경쟁의 일환이자, 미국 내 첨단기술 유출을 막기 위한 조치였습니다. 그런데 이는 오히려 많은 중국인 인재들이 미국 밖으로 유출되는 결과를 초래했는데요. 이 시기와 맞물려서 중국 내 학계는 눈에 띄는 발전을 이루었습니다. 이것은 과연 우연일까요? ")
+st.markdown('<h5>현재 트럼프의 유학생 대상 비자 정책과 유사한 정책이 과거에도 있었습니다. 2020년, 트럼프 정부는 Proclamation 10043을 통해 중국 인민해방군과 연계된 연구자 및 대학원생 약 1000명의 비자를 취소했습니다. 이는 미-중 간 기술 경쟁의 일환이자, 미국 내 첨단기술 유출을 막기 위한 조치였습니다. 그런데 이는 오히려 많은 중국인 인재들이 미국 밖으로 유출되는 결과를 초래했는데요. 이 시기와 맞물려서 중국 내 학계는 눈에 띄는 발전을 이루었습니다. 이것은 과연 우연일까요?<h5>', unsafe_allow_html=True)
 st.markdown('<h3>정책의 결과: 중국으로 돌아가는 학자 급증</h3>', unsafe_allow_html=True)
 
 
@@ -996,7 +1059,7 @@ df = pd.DataFrame(data)
 df.set_index("연도", inplace=True)
 st.line_chart(df)
 
-st.write("비자 정지 정책으로 인해 중국인 학자가 중국으로 귀국하는 것은 '우수한 인재들'의 유출로 볼 수도 있습니다.실제로 미국에서 중국으로 돌아간 학자가 중국 과학 기술의 발전에 기여한 사례도 있어요.")
+st.write("비자 정지 정책으로 인해 중국인 학자가 중국으로 귀국하는 것은 '우수한 인재들'의 유출로 볼 수도 있습니다.실제로 미국에서 중국으로 돌아간 학자가 중국 과학 기술의 발전에 기여한 사례도 있습니다.")
 
 st.markdown('<h3>미국이 놓친 인재 : 송춘주 교수</h3>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
@@ -1030,7 +1093,7 @@ st.markdown("""
     <div style="display: flex; justify-content: center; margin-top: 30px; margin-bottom: 30px">
         <div style="position: relative; background-color: #2196F3; padding: 15px; border-radius: 10px; width: fit-content;">
             <b style="color: white;">
-                미국에서 쫓겨난 송춘주 교수님은 중국 배이징에 일반 인공지능 연구소를 설립!<br>
+                미국을 떠난 송춘주 교수님은 중국 배이징에 일반 인공지능 연구소를 설립!<br>
                 이 연구소는 최근에 세계 최초 기술을 개발하는 등 중국의 기술력에 크게 기여하고 있어요.
             </b>
             <div style="content: ''; position: absolute; top: -10px; right: 20px; border-width: 0 10px 10px 10px; border-style: solid; border-color: transparent transparent #2196F3 transparent;"></div>
@@ -1038,7 +1101,7 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-
+st.write('송 교수님은 미국을 떠나 중국 베이징에 일반 인공지능 연구소(BIGAI)를 설립했고, 현재는 중국의 AI 기술력 향상에 크게 기여하고 계십니다. 일반 인공지능 연구소는 최근에 인간의 손 감각을 지닌 ‘로봇 손’ 개발에 성공하며 로봇 공학의 한 획을 그었습니다.')
 st.markdown('<h3>중국의 과학기술력은 2000년대에 계속 성장중</h3>', unsafe_allow_html=True)
 
 # 원본 데이터
@@ -1088,3 +1151,10 @@ for col, idx in zip(cols, selected_indices):
 
 st.markdown('<h3>이번 미국의 비자 제한 조치, 자충수일수도...?</h3>', unsafe_allow_html=True)
 st.write("과거에는 중국을 대상으로만 한 제재이지만 지금의 비자 정책은 모든 국적의 유학생을 대상으로 하고 있습니다. 우수한 유학생들, 연구진들이 미국 밖으로 유출이 된다면 미국 내 이들의 빈 자리는 어떻게 채울 수 있을까요?")
+st.write()
+st.markdown("---")
+st.markdown('<h4>[참고문헌]<h4>', unsafe_allow_html=True)
+st.write('[1]')
+st.write('[2]')
+st.write('[3]')
+st.write('[4]')
