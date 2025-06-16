@@ -43,7 +43,7 @@ st.markdown("""
             하버드는 이에 반발해 정부를 상대로 소송을 제기하며, 국제 유학생 보호를 위한 싸움을 이어가고 있습니다.
         </div>
         <div class="gif-col">
-            <img src="https://interactives.dallasnews.com/2019/annotating-donald-trumps-dallas-speech/images/trump2.gif" width="100%">
+            <img src="https://i.postimg.cc/4x3gYPSL/trump2.gif" width="150%">
         </div>
         <div class="text-col">
             이 정책으로 인해 수많은 유학생들은 학교를 떠나야 할 위기에 쳐했습니다. 
@@ -261,7 +261,7 @@ if st.session_state.selected is not None:
         """,
         unsafe_allow_html=True
     )
-
+st.write(' ')
 st.write("트럼프 정부의 유학생 비자 정책 강화로 인해 유학생들은 학업 지속 여부, 졸업 가능성, 신분 유지 문제 등으로 깊은 불안을 호소하고 있습니다. 교수진과 학교 측도 이 상황을 예의주시하며 법적 대응과 학생 보호 방안을 모색 중이지만, 확실한 해결책은 없는 상황인데요. 안전해야 할 학문의 장이 정치적 변수로 위협받고 있으며, 유학생들은 추방·입학 취소 등의 불안 속에서 심리적·경제적 부담까지 떠안고 있습니다. ")
 import streamlit as st
 import base64
@@ -1147,14 +1147,40 @@ for col, idx in zip(cols, selected_indices):
 
 
 
+st.markdown('---')
 
+st.markdown('<h1>이번 미국의 비자 제한 조치, 자충수일수도...?</h1>', unsafe_allow_html=True)
+st.write("과거에는 중국을 대상으로만 한 제재이지만 지금의 비자 정책은 모든 국적의 유학생을 대상으로 하고 있습니다. 우수한 유학생들, 연구진들이 미국 밖으로 유출이 된다면 미국 내 이들의 빈 자리는 어떻게 채울 수 있을까요?" \
+"트럼프의 해외 대학생 대상 정책은 미국을 great하게 만드는 **묘수** 될까요? 아니면 **자충수**가 될까요?")
+col1, col2,col3, col4, col5 = st.columns([1, 2, 2, 2, 1])
+with col2:
+    st.image('assets/hana.png',width=200)
+with col3: 
+    st.image('assets/suan.png',width=200)
+with col4: 
+    st.image('assets/rinka.png',width=200)
 
-st.markdown('<h3>이번 미국의 비자 제한 조치, 자충수일수도...?</h3>', unsafe_allow_html=True)
-st.write("과거에는 중국을 대상으로만 한 제재이지만 지금의 비자 정책은 모든 국적의 유학생을 대상으로 하고 있습니다. 우수한 유학생들, 연구진들이 미국 밖으로 유출이 된다면 미국 내 이들의 빈 자리는 어떻게 채울 수 있을까요?")
 st.write()
 st.markdown("---")
-st.markdown('<h4>[참고문헌]<h4>', unsafe_allow_html=True)
-st.write('[1]')
-st.write('[2]')
-st.write('[3]')
-st.write('[4]')
+with st.expander("**📚 참고자료**"):
+    st.caption("본 분석에 사용된 주요 자료들입니다.")
+    st.markdown("[ApplyBoard | The Impact of International Students on Destination Economies in 2023](https://www.applyboard.com/applyinsights-article/the-impact-of-international-students-on-destination-economies-in-2023)")
+    st.markdown("[Opendoors | All Places of Origin](https://opendoorsdata.org/data/international-students/all-places-of-origin/)")
+    st.markdown("[Opendoors | Leading Places of Origin](https://opendoorsdata.org/data/international-students/all-places-of-origin/)")
+    st.markdown("[NAFSA | International Student Economic Value Tool](https://www.nafsa.org/policy-and-advocacy/policy-resources/nafsa-international-student-economic-value-tool-v2)")
+    st.markdown("[NYT | Trump Has Targeted These Universities. Why?](https://www.nytimes.com/article/trump-university-college.html)")
+    st.markdown("[Al Jazeera | Timeline: Trump’s Escalating Standoff With Harvard University](https://www.aljazeera.com/news/2025/5/22/timeline-trumps-escalating-standoff-with-harvard-university)")
+    st.markdown("[CNN | Attacks on Harvard by Trump Administration Have Built for Months: A Timeline](https://edition.cnn.com/2025/04/26/us/harvard-university-trump-timeline)")
+    st.markdown("[U.S. Department of Education | Office for Civil Rights Sends Letters to 60 Universities Under Investigation](https://www.ed.gov/about/news/press-release/us-department-of-educations-office-civil-rights-sends-letters-60-universities-under-investigation-antisemitic-discrimination-and-harassment)")
+    st.markdown("[BBC | US Halts Student Visa Appointments, Plans Expanded Social Media Vetting](https://www.bbc.com/news/articles/cy75eenl46eo)")
+    st.markdown("[연합뉴스 | 트럼프 행정부, 프린스턴大도 지원금 중단…아이비리그 4번째](https://www.yna.co.kr/view/AKR20250402004300072?site=mapping_related)")
+    st.markdown("[TIME | How Trump’s Crackdown on International Students Could Escalate Trade Tensions With China](https://time.com/7289945/us-china-trump-rubio-international-student-visa-restrictions-trade-negotiations/)")
+    st.markdown("[미국 비자 중단? 유학생들에게 남은 선택지는 무엇일까](https://www.chosun.com/international/international_general/2025/05/29/R2RDTZM73FDJBBE5QXQECKJDQM/)")
+    st.markdown("[\"다음 학기에 美 갈 수 있나\"... 유학 준비생 '비자 날벼락'](https://www.chosun.com/international/international_general/2025/05/29/R2RDTZM73FDJBBE5QXQECKJDQM/)")
+    st.markdown("[Unions representing Harvard workers fear Trump's 'authoritarian turn'](https://www.theguardian.com/us-news/2025/may/30/trump-harvard-workers-union?)")
+    st.markdown("[하버드에 오기위해 시에라리온에서 2억원을 마련했지만 지금은 미래가 불확실하다](https://www.bbc.com/korean/articles/c3rpz30y2rxo)")
+    st.markdown("[These Are the Students Targeted by Trump's Immigration Enforcement Over Campus Activism](https://time.com/7272060/international-students-targeted-trump-ice-detention-deport-campus-palestinian-activism/)")
+    st.markdown("[More Than 600 Harvard Faculty Urge Governing Boards To Resist Demands From Trump](https://www.thecrimson.com/article/2025/3/27/faculty-letter-condemn-attacks/)")
+    st.markdown("[ハーバード大「留学生受け入れ資格はく奪」の影響を日本人留学生が語る。「これから来る後輩たちが不憫でならない」](https://news.yahoo.co.jp/articles/4ddebfa6d79000a0db9f0b6cad037757223feed1)")
+    st.markdown("[Harvard urges judge to bar Trump from closing doors to international students](https://www.reuters.com/world/us/harvard-urge-judge-bar-trump-closing-doors-international-students-2025-06-16/)")
+    st.markdown("[As Trump attacks higher education, some students avoid U.S. colleges](https://www.washingtonpost.com/education/2025/05/02/colleges-international-students-trump-visas-deportations/)")
