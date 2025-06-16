@@ -26,10 +26,62 @@ st.markdown("""
         width: 30%;
         text-align: center;
     }
+    .gif-col img {
+        max-width: 100%;
+        height: auto;
+    }
     h1 {
         text-align: center;
         color: white;
         margin-top: 50px;
+    }
+    
+    /* 반응형 레이아웃 - 768px 이하에서 세로 배치 */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+        
+        .text-col {
+            width: 100%;
+            padding: 0 10px;
+            font-size: 16px;
+            order: 1;
+        }
+        
+        .text-col:last-child {
+            order: 3;
+        }
+        
+        .gif-col {
+            width: 100%;
+            order: 2;
+            margin: 15px 0;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    }
+    
+    /* 더 작은 화면 */
+    @media (max-width: 480px) {
+        .text-col {
+            font-size: 14px;
+            padding: 0 5px;
+        }
+        
+        h1 {
+            font-size: 20px;
+        }
+        
+        .container {
+            margin-top: 15px;
+            gap: 15px;
+        }
     }
     </style>
 
@@ -1152,13 +1204,9 @@ st.markdown('---')
 st.markdown('<h1>이번 미국의 비자 제한 조치, 자충수일수도...?</h1>', unsafe_allow_html=True)
 st.write("과거에는 중국을 대상으로만 한 제재이지만 지금의 비자 정책은 모든 국적의 유학생을 대상으로 하고 있습니다. 우수한 유학생들, 연구진들이 미국 밖으로 유출이 된다면 미국 내 이들의 빈 자리는 어떻게 채울 수 있을까요?" \
 "트럼프의 해외 대학생 대상 정책은 미국을 great하게 만드는 **묘수** 될까요? 아니면 **자충수**가 될까요?")
-col1, col2,col3, col4, col5 = st.columns([1, 2, 2, 2, 1])
+col1, col2,col3 = st.columns([1, 2, 1])
 with col2:
-    st.image('assets/hana.png',width=200)
-with col3: 
-    st.image('assets/suan.png',width=200)
-with col4: 
-    st.image('assets/rinka.png',width=200)
+    st.image('assets/curious.png')
 
 st.write()
 st.markdown("---")
