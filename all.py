@@ -283,7 +283,7 @@ def get_image_filenames(word_type):
     if word_type == "💬 많이 언급된 단어는?":
         return "assets/korea_noun.png", "assets/usa_noun.png"
     else:
-        return "assets/korea_adj.png", "assets/usa_adj.png"
+        return "assets/한국_wc.png", "assets/usa_adj.png"
 
 img1_path, img2_path = get_image_filenames(word_type)
 
@@ -354,15 +354,49 @@ def load_country_data():
         # 국가명 컬럼명 설정
         country_df.columns = ['Code'] + ['Country'] + [col for col in columns[2:]]
         
-        # 연도별 총합 계산
+        # TOTAL 행에서 연도별 총합 가져오기
         year_totals = {}
-        for year in year_columns:
-            total = 0
-            for _, row in country_df.iterrows():
-                val = row[year]
-                if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
-                    total += val
-            year_totals[year] = total
+        
+        # TOTAL 행 찾기
+        total_row = None
+        for _, row in df.iterrows():
+            country_name = str(row.iloc[1]).strip().upper()  # 두 번째 컬럼(국가명)
+            if 'TOTAL' in country_name:
+                total_row = row
+                break
+        
+        if total_row is not None:
+            # TOTAL 행에서 각 연도별 값 추출
+            for year in year_columns:
+                try:
+                    total_val = total_row[year]
+                    if pd.notna(total_val) and str(total_val) != '-' and isinstance(total_val, (int, float)):
+                        year_totals[year] = total_val
+                    else:
+                        # TOTAL 행에 값이 없으면 기존 방식으로 계산
+                        total = 0
+                        for _, country_row in country_df.iterrows():
+                            val = country_row[year]
+                            if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
+                                total += val
+                        year_totals[year] = total
+                except:
+                    # 오류 발생시 기존 방식으로 계산
+                    total = 0
+                    for _, country_row in country_df.iterrows():
+                        val = country_row[year]
+                        if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
+                            total += val
+                    year_totals[year] = total
+        else:
+            # TOTAL 행을 찾지 못한 경우 기존 방식으로 계산
+            for year in year_columns:
+                total = 0
+                for _, row in country_df.iterrows():
+                    val = row[year]
+                    if pd.notna(val) and str(val) != '-' and isinstance(val, (int, float)):
+                        total += val
+                year_totals[year] = total
         
         return country_df, year_columns, year_totals
         
