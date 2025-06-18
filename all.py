@@ -1201,15 +1201,16 @@ for col, idx in zip(cols, selected_indices):
 
 st.markdown('---')
 
-st.markdown('<h1>이번 미국의 비자 제한 조치, 자충수일수도...?</h1>', unsafe_allow_html=True)
+st.markdown('<h1>이번 미국의 비자 제한 조치,<>자충수일수도...?</h1>', unsafe_allow_html=True)
 st.write("과거에는 중국을 대상으로만 한 제재이지만 지금의 비자 정책은 모든 국적의 유학생을 대상으로 하고 있습니다. 우수한 유학생들, 연구진들이 미국 밖으로 유출이 된다면 미국 내 이들의 빈 자리는 어떻게 채울 수 있을까요?" \
 "트럼프의 해외 대학생 대상 정책은 미국을 great하게 만드는 **묘수** 될까요? 아니면 **자충수**가 될까요?")
 col1, col2,col3 = st.columns([1, 2, 1])
 with col2:
     st.image('assets/curious.png')
 
-st.write()
-st.markdown("---")
+st.write('')
+st.markdown('---')
+
 with st.expander("**📚 참고자료**"):
     st.caption("본 분석에 사용된 주요 자료들입니다.")
     st.markdown("[ApplyBoard | The Impact of International Students on Destination Economies in 2023](https://www.applyboard.com/applyinsights-article/the-impact-of-international-students-on-destination-economies-in-2023)")
@@ -1232,3 +1233,10 @@ with st.expander("**📚 참고자료**"):
     st.markdown("[ハーバード大「留学生受け入れ資格はく奪」の影響を日本人留学生が語る。「これから来る後輩たちが不憫でならない」](https://news.yahoo.co.jp/articles/4ddebfa6d79000a0db9f0b6cad037757223feed1)")
     st.markdown("[Harvard urges judge to bar Trump from closing doors to international students](https://www.reuters.com/world/us/harvard-urge-judge-bar-trump-closing-doors-international-students-2025-06-16/)")
     st.markdown("[As Trump attacks higher education, some students avoid U.S. colleges](https://www.washingtonpost.com/education/2025/05/02/colleges-international-students-trump-visas-deportations/)")
+
+st.write(' ')
+
+st.markdown("<p style='text-align: right; color: gray;'>2025-spring 데이터저널리즘 2조"
+    "<br>최수안(Suan Choi) | 언론정보학과 | suanchoi1102@snu.ac.kr"
+    "<br>부하나(Hana Vu) | 언론정보학과 | huongvu@snu.ac.kr"
+    "<br>카네코린카(Rinka Kaneko) | 심리학과 | kanekorinka@snu.ac.kr</p>", unsafe_allow_html=True)
