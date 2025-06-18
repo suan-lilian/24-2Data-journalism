@@ -1236,7 +1236,7 @@ with st.expander("**📚 참고자료**"):
 
 st.write(' ')
 
-st.markdown("<p style='text-align: right; color: gray;'>2025-spring 데이터저널리즘 2조"
+st.markdown("<p style='text-align: right; color: #444444;'>2025-spring 데이터저널리즘 2조"
     "<br>최수안(Suan Choi) | 언론정보학과 | suanchoi1102@snu.ac.kr"
     "<br>부하나(Hana Vu) | 언론정보학과 | huongvu@snu.ac.kr"
     "<br>카네코린카(Rinka Kaneko) | 심리학과 | kanekorinka@snu.ac.kr</p>", unsafe_allow_html=True)
