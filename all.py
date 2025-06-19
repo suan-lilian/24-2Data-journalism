@@ -109,7 +109,7 @@ st.markdown("""
 st.markdown('---')
 
 st.title("Trump vs International Students Timeline")
-
+st.markdown("<p style='text-align: right; color:gray;'>*본 타임라인은 2025년 6월  5일까지를 다룹니다.</p>", unsafe_allow_html=True)
 html_code = """
 <!DOCTYPE html>
 <html>
